@@ -27,7 +27,15 @@ TArray<FString> UMyBlueprintFunctionLibrary::FindFiles(FString Path, FString Fil
 
 bool UMyBlueprintFunctionLibrary::MoveFileTo(FString To, FString From)
 {
+
+
+
 	return IFileManager::Get().Move(*To, *From);
+}
+
+bool UMyBlueprintFunctionLibrary::CopyFileTo(FString To, FString From)
+{
+	return IFileManager::Get().Copy(*To, *From);
 }
 
 bool UMyBlueprintFunctionLibrary::DeleteFile(FString FilePath)

@@ -27,6 +27,9 @@ class FILEHANDLE_API UMyBlueprintFunctionLibrary : public UBlueprintFunctionLibr
 		static bool MoveFileTo(FString To, FString From);
 
 	UFUNCTION(BlueprintCallable, Category = "FileHandle")
+		static bool CopyFileTo(FString To, FString From);
+
+	UFUNCTION(BlueprintCallable, Category = "FileHandle")
 		static bool DeleteFile(FString FilePath);
 
 	UFUNCTION(BlueprintCallable, Category = "FileHandle")
