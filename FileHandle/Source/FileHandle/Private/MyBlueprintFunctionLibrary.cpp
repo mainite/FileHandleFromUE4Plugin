@@ -33,7 +33,7 @@ bool UMyBlueprintFunctionLibrary::MoveFileTo(FString To, FString From)
 	return IFileManager::Get().Move(*To, *From);
 }
 
-bool UMyBlueprintFunctionLibrary::CopyFileTo(FString To, FString From)
+int32 UMyBlueprintFunctionLibrary::CopyFileTo(FString To, FString From)
 {
 	return IFileManager::Get().Copy(*To, *From);
 }
@@ -59,4 +59,10 @@ void UMyBlueprintFunctionLibrary::DeleteDic(FString filePath)
 {
 	IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
 	PlatformFile.DeleteDirectory(*filePath);
+}
+
+int64 UMyBlueprintFunctionLibrary::GitFileSize(FString filePath)
+{
+	IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
+	return PlatformFile.FileSize(*filePath);
 }

@@ -27,7 +27,7 @@ class FILEHANDLE_API UMyBlueprintFunctionLibrary : public UBlueprintFunctionLibr
 		static bool MoveFileTo(FString To, FString From);
 
 	UFUNCTION(BlueprintCallable, Category = "FileHandle")
-		static bool CopyFileTo(FString To, FString From);
+		static int32 CopyFileTo(FString To, FString From);
 
 	UFUNCTION(BlueprintCallable, Category = "FileHandle")
 		static bool DeleteFile(FString FilePath);
@@ -40,6 +40,10 @@ class FILEHANDLE_API UMyBlueprintFunctionLibrary : public UBlueprintFunctionLibr
 	
 	UFUNCTION(BlueprintCallable, Category = "FileHandle")
 		static void DeleteDic(FString filePath);
+
+
+	UFUNCTION(BlueprintCallable, Category = "FileHandle")
+		static int64 GitFileSize(FString filePath);
 
 
 	
