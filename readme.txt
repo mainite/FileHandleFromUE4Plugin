@@ -1,1 +1,12 @@
 这是一个win平台用来操作本地文件的UE4插件
+
+ReadStringToFile
+WriteStringToFile
+FindFiles
+MoveFileTo
+CopyFileTo
+DeleteFile
+OpenFile
+CreateDic
+DeleteDic
+GitFileSize
