@@ -66,3 +66,24 @@ int64 UMyBlueprintFunctionLibrary::GitFileSize(FString filePath)
 	IPlatformFile& PlatformFile = FPlatformFileManager::Get().GetPlatformFile();
 	return PlatformFile.FileSize(*filePath);
 }
+
+
+TArray<FString> UMyBlueprintFunctionLibrary::FindFolder(FString Path, FString Filter, bool Files, bool Directory)
+{
+	TArray<FString> FilePathList;
+	FilePathList.Empty();
+	FFileManagerGeneric::Get().FindFilesRecursive(FilePathList, *Path, *Filter, Files, Directory);
+	return FilePathList;
+
+}
+
+TArray<FString> UMyBlueprintFunctionLibrary::GetFolderFiles(FString Path)
+{
+	TArray<FString> Files;
+	FPaths::NormalizeDirectoryName(Path);
+	IFileManager& FileManager = IFileManager::Get();
+	FString FinalPath = Path / TEXT("*");
+	FileManager.FindFiles(Files, *FinalPath, true, true);
+	return Files;
+
+}

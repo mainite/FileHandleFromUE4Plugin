@@ -10,3 +10,5 @@ OpenFile
 CreateDic
 DeleteDic
 GitFileSize
+FindFolder(Path,Filter,Files,Directory)
+GetFolderFiles(Path)

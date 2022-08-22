@@ -45,6 +45,13 @@ class FILEHANDLE_API UMyBlueprintFunctionLibrary : public UBlueprintFunctionLibr
 	UFUNCTION(BlueprintCallable, Category = "FileHandle")
 		static int64 GitFileSize(FString filePath);
 
+	//查找文件目录下的所有文件
+	UFUNCTION(BlueprintCallable, DisplayName = "FindFolder", Category = "File")
+		static TArray<FString> FindFolder(FString Path, FString Filter, bool Files, bool Directory);
+	//查找文件目录下所有文件无法删选查找
+	UFUNCTION(BlueprintCallable, DisplayName = "GetFolderFiles", Category = "File")
+		static TArray<FString> GetFolderFiles(FString Path);
+
 
 	
 };
